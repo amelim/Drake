@@ -1,0 +1,24 @@
+Drake todo list:
+  Visuals:
+    ✘ Create Tile class @cancelled (13-08-03 16:50)
+    ✔ Render simple map @done (13-08-03 17:05)
+    ✔ Render background tiles @done (13-08-03 17:29)
+    ✔ Render player on top buffer @done (13-08-03 17:29)
+    ☐ Fix rendering on first frame
+    ☐ Lighting engine
+    ☐ GLSL shader effects
+  Gameplay:
+    ✔ Build simple map @done (13-08-03 11:42)
+    ✔ Dungeon floor generation @done (13-08-03 17:29)
+    ✔ Fix floor tile sizes @done (13-08-03 18:11)
+    ✔ Improve the tile storage for dungeon generation @done (13-08-04 12:00)
+        BSP Tree:
+            ✔ Constructor @done (13-08-04 12:01)
+            ✔ Data structure @done (13-08-04 17:35)
+            ✔ Generation @done (13-08-04 17:35)
+            ✔ Fix BSP tree recursion @done (13-08-04 18:05)
+            ✔ Debug printing of BSP tree @done (13-08-04 18:06)
+            ☐ Test
+ Misc:
+    ☐ Version Control DUH!
+    ☐ Design Doc

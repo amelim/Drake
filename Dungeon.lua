@@ -2,7 +2,6 @@
 --Andrew Melim
 
 require "Entity"
-require "BSP"
 
 Dungeon = {w=love.window.getWidth()/16, h=love.window.getHeight()/24}
 
@@ -33,7 +32,6 @@ function Dungeon:new(o)
     end
   end
 
-	self.bsp = BSP:new()
 	return o
 end
 

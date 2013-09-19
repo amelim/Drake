@@ -1,7 +1,7 @@
 --Tile.lua
 --Andrew Melim
 
-Tile = {x=0,y=0,color={},geometry={}}
+Tile = {x=0,y=0,room=0,color={},geometry={}}
 
 function Tile:new(o)
 	o = o or {}

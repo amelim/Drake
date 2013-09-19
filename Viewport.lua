@@ -21,7 +21,9 @@ function Viewport:setTileset(tileset,tileW,tileH)
   self.tilesetImage:setFilter("nearest", "linear")
   self.tileWidth = tileW
   self.tileHeight = tileH
+  --Sprite Batch for creatures/objects
   self.tilesetBatch = love.graphics.newSpriteBatch(self.tilesetImage, tileW*tileH)
+  --Sprite Batch for world tiles
   self.dungeonBatch = love.graphics.newSpriteBatch(self.tilesetImage, self.width*self.height*10)
 end
 
@@ -34,6 +36,7 @@ function Viewport:register(object)
   table.insert(self.objects,object)
 end
 
+--Adds all tiles in the dungeon floor to the current spritebatch for rendering
 function Viewport:registerDungeon(dungeon)
   self.dungeonBatch:clear()
   for x=0, dungeon.w do
@@ -63,4 +66,14 @@ function Viewport:render()
   love.graphics.draw(self.tilesetBatch,
      math.floor(-self.zoomX*(50%1)*self.tileWidth), math.floor(-self.zoomY*(25%1)*self.tileHeight),
      0, self.zoomX, self.zoomY)
+end
+
+function Viewport:printRooms()
+  for x=0, dungeon.w do
+    for y=0, dungeon.h do
+      if(dungeon.rooms[x][y] > 0) then
+        love.graphics.print(dungeon.rooms[x][y], x*self.tileWidth, y*self.tileHeight)
+      end
+    end
+  end
 end

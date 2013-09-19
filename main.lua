@@ -8,19 +8,33 @@ require "Entity"
 require "Viewport"
 require "Dungeon"
 
+debug = false
+
 function love.load()
   --canvas = love.graphics.newCanvas(800, 800)
-
+  love.window.setMode(800,600,{})
   viewport = Viewport:new()
   viewport:setTileset("oryx_roguelike_16x24_alpha.png",16,24)
-
   dungeon = Dungeon:new()
-  dungeon:createFloor(viewport:getTilesetSize())
+  dungeon:ruinsFloor(viewport:getTilesetSize())
   viewport:registerDungeon(dungeon)
 
   rogue = Entity:new()
   rogue:setTile(1,25,16,24,viewport:getTilesetSize())
-  rogue:setPos(1,1)
+
+  --Find empty space to start
+  placed = false
+  for x=1, dungeon.w do
+    for y=1, dungeon.h do
+      if(dungeon:free(x,y)) then
+        rogue:setPos(x,y)
+        placed = true
+      end
+      if(placed) then break end
+    end
+    if(placed) then break end
+  end
+  
   viewport:register(rogue)
 
   local f = love.graphics.newFont(12)
@@ -54,11 +68,16 @@ function love.update(dt)
     dungeon:free(x+1,y) then
     rogue:move(1, 0)
   end
+  if love.keyboard.isDown("d") then debug = not debug end
 end
 
 function love.draw()
   viewport:render()
+  if debug then
+    viewport:printRooms()
+  end
   love.event.wait( )
+  
   --love.graphics.print("FPS: "..love.timer.getFPS(), 10, 20)
   --love.graphics.print("Dungeon W:"..dungeon.w.."Dungeon H:"..dungeon.h, 10, 40)
   --love.graphics.print("Player Pos:"..rogue.x..","..rogue.y,10,60)

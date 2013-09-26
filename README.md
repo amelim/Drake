@@ -9,12 +9,17 @@ Running the game
 ----------------
 
 Linux:
+
 sudo apt-get install love-unstable
+
 love-unstable /path/to/Drake/
 
 Windows:
+
 Download the nightly build from http://nightly.projecthawkthorne.com/
+
 The easiest way to run the game is to drag the folder onto love.exe, or a shortcut to love.exe. Remember to drag the folder containing main.lua, and not main.lua itself.
 
 NOTE: The nightly build has one API call difference than the Linux version
+
 On Viewport line 48 and 59 change self.tilesetBatch.addg( to self.tilesetBatch.add(

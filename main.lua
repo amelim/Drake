@@ -62,6 +62,7 @@ function love.update(dt)
       love.event.push("quit")   -- actually causes the app to quit
   end 
   x,y = rogue:getPos()
+  effect:send("pos", {8+x*16, 12+y*24})
   if love.keyboard.isDown("up") and 
     dungeon:free(x,y-1)  then
     rogue:move(0, -1)
@@ -79,8 +80,10 @@ function love.update(dt)
     rogue:move(1, 0)
   end
   if love.keyboard.isDown("d") then debug = not debug end
-
+  x,y = rogue:getPos()
   effect:send("pos", {8+x*16, 12+y*24})
+
+  
 end
 
 function love.draw()
@@ -89,7 +92,7 @@ function love.draw()
   if debug then
     viewport:printRooms()
   end
-  --love.event.wait( )
+  love.event.wait( )
   
   --love.graphics.print("FPS: "..love.timer.getFPS(), 10, 20)
   --love.graphics.print("Dungeon W:"..dungeon.w.."Dungeon H:"..dungeon.h, 10, 40)

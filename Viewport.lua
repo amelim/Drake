@@ -45,7 +45,7 @@ function Viewport:registerDungeon(dungeon)
       if(tile) then
         r,g,b,a = tile:getColor()
         self.dungeonBatch:setColor(r,g,b,a)
-        self.dungeonBatch:add(tile.geometry, tile.x*self.tileWidth, tile.y*self.tileHeight)
+        self.dungeonBatch:addg(tile.geometry, tile.x*self.tileWidth, tile.y*self.tileHeight)
       end
     end
   end
@@ -56,7 +56,7 @@ function Viewport:updateTileset()
   for key,value in pairs(self.objects) do
     r,g,b,a = value:getColor()
     self.tilesetBatch:setColor(r,g,b,a)
-    self.tilesetBatch:add(value.geometry, value.x*self.tileWidth, value.y*self.tileHeight)
+    self.tilesetBatch:addg(value.geometry, value.x*self.tileWidth, value.y*self.tileHeight)
   end
 end
 

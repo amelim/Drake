@@ -11,6 +11,16 @@ require "Dungeon"
 debug = false
 
 function love.load()
+  effect = love.graphics.newShader [[
+    extern vec2 pos;
+    vec4 effect(vec4 color, Image texture, vec2 texture_coords, vec2 pixel_coords)
+    {
+      vec4 texcolor = Texel(texture, texture_coords);
+      number alpha = 1/sqrt(pow((pixel_coords.x - pos.x),2) + pow((600-pixel_coords.y - pos.y),2));
+      return vec4(1, 1, 1, alpha*60) * texcolor * color;
+    }
+  ]]
+
   --canvas = love.graphics.newCanvas(800, 800)
   love.window.setMode(800,600,{})
   viewport = Viewport:new()
@@ -69,14 +79,17 @@ function love.update(dt)
     rogue:move(1, 0)
   end
   if love.keyboard.isDown("d") then debug = not debug end
+
+  effect:send("pos", {8+x*16, 12+y*24})
 end
 
 function love.draw()
+  love.graphics.setShader(effect)
   viewport:render()
   if debug then
     viewport:printRooms()
   end
-  love.event.wait( )
+  --love.event.wait( )
   
   --love.graphics.print("FPS: "..love.timer.getFPS(), 10, 20)
   --love.graphics.print("Dungeon W:"..dungeon.w.."Dungeon H:"..dungeon.h, 10, 40)

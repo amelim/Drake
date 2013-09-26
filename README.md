@@ -8,7 +8,7 @@ This game requires the use of the unstable Love2D build 0.9.X
 Running the game
 ----------------
 
-Linux:
+Ubuntu 13.04:
 
 sudo apt-get install love-unstable
 

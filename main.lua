@@ -15,9 +15,15 @@ function love.load()
     extern vec2 pos;
     vec4 effect(vec4 color, Image texture, vec2 texture_coords, vec2 pixel_coords)
     {
+      number radius = 300;
       vec4 texcolor = Texel(texture, texture_coords);
-      number alpha = 1/sqrt(pow((pixel_coords.x - pos.x),2) + pow((600-pixel_coords.y - pos.y),2));
-      return vec4(1, 1, 1, alpha*60) * texcolor * color;
+      number sqdist = pow((pixel_coords.x - pos.x),2) + pow((600-pixel_coords.y - pos.y),2);
+      //intensityCoef2 = intensityCoef1 - 1.0/(1.0+radius*radius);
+      //intensityCoef3 = intensityCoef2 / (1.0 - 1.0/(1.0+radius*radius));
+      number if1 = 1/(1 + sqdist/20);
+      number if2 = if1 - 1/(1+radius);
+      number if3 = if2 / (1 - 1/(1 + radius));
+      return vec4(1, 1, 1, if3*radius) * texcolor * color;
     }
   ]]
 
@@ -92,6 +98,7 @@ function love.draw()
   if debug then
     viewport:printRooms()
   end
+  x,y = rogue:getPos()
   love.event.wait( )
   
   --love.graphics.print("FPS: "..love.timer.getFPS(), 10, 20)

@@ -28,6 +28,14 @@ function Entity:getPos(x,y)
   return self.x, self.y
 end
 
+function Entity:getX()
+  return self.x
+end
+
+function Entity:getY()
+  return self.y
+end
+
 function Entity:move(dx,dy)
   self.x = self.x + dx
   self.y = self.y + dy

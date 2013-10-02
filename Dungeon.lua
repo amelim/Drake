@@ -12,7 +12,7 @@ function Dungeon:new(o)
 	setmetatable(o,self)
 	self.__index = self
 	self.floor = {} -- Tiles
-	self.blocked = {} -- 2D array on whether the position is blocked or not
+	self.blocked = {} -- 2D array on whether the position is blocked or not, governs FOV currently
   self.rooms = {} -- 2D array that maps x,y loc to room number
   self.roomMap = {} -- A 2D array of Room objects
 	self.type = {}
@@ -41,6 +41,14 @@ end
 
 function Dungeon:getFloor()
   return self.floor
+end
+
+function Dungeon:getBlocked()
+  return self.blocked
+end
+
+function Dungeon:getFloorSize()
+  return self.w, self.h
 end
 --*****************************************************************************--
 --*********************         Floor creation       **************************--

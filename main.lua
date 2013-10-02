@@ -7,6 +7,7 @@ local bloom
 require "Entity"
 require "Viewport"
 require "Dungeon"
+require "FOV"
 
 debug = false
 
@@ -37,6 +38,8 @@ function love.load()
 
   rogue = Entity:new()
   rogue:setTile(1,25,16,24,viewport:getTilesetSize())
+
+  fov = FOV:new()
 
   --Find empty space to start
   placed = false
@@ -88,20 +91,30 @@ function love.update(dt)
   if love.keyboard.isDown("d") then debug = not debug end
   x,y = rogue:getPos()
   effect:send("pos", {8+x*16, 12+y*24})
+  tW,tH = dungeon:getFloorSize()
 
+  fov:findForwardEdges(x, y, dungeon:getBlocked(), tW, tH, 16, 24)
   
 end
 
 function love.draw()
-  love.graphics.setShader(effect)
-  viewport:render()
-  if debug then
+  if not debug then
+    love.graphics.setShader(effect)
+  else
+    love.graphics.setShader()
     viewport:printRooms()
+    forwardEdges = fov:getForwardEdges()
+    for k,v in pairs(forwardEdges) do
+      x0,y0 = v:getOrigin()
+      x,y = v:getEnd()
+      love.graphics.line(x0,y0,x,y)
+    end
+    love.graphics.print("FPS: "..love.timer.getFPS(), 10, 20)
+    love.graphics.print("Dungeon W:"..dungeon.w.."Dungeon H:"..dungeon.h, 10, 40)
+    love.graphics.print("Player Pos:"..rogue.x..","..rogue.y,10,60)
   end
-  x,y = rogue:getPos()
-  love.event.wait( )
+  viewport:render()
+  love.event.wait()
   
-  --love.graphics.print("FPS: "..love.timer.getFPS(), 10, 20)
-  --love.graphics.print("Dungeon W:"..dungeon.w.."Dungeon H:"..dungeon.h, 10, 40)
-  --love.graphics.print("Player Pos:"..rogue.x..","..rogue.y,10,60)
+
 end

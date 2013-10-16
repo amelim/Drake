@@ -38,5 +38,12 @@ function Line:set(x0,y0,x,y)
   self.y_ = y
 end
 
+-- Find return the shortest distance from the point
+function Line:minDist(x,y)
+  distA = math.sqrt((x-self.x0_)^2 + (y-self.y0_)^2)
+  distB = math.sqrt((x-self.x_)^2 + (y-self.y_)^2)
+  return math.min(distA, distB)
+end
+
 --function Line:getSlope()
 --  return x0_ - 

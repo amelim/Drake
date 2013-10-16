@@ -84,7 +84,7 @@ end
 --*****************************************************************************--
 --Next, I link up each of these edges. So now each tile-length edge knows about its neighbors: 
 --each has a "next" and a "previous" edge. Some edges are dead-ends, though: they don't have a next or a previous.
-function FOV:linkEdges()
+function FOV:linkEdges(px,py,tileW,tileH)
   self.links = {}
   for ki,vi in pairs(self.forwardEdges) do
     for kj,vj in pairs(self.forwardEdges) do
@@ -114,6 +114,10 @@ function FOV:linkEdges()
       end
     end
   end
+  for k,edge in pairs(self.forwardEdges) do
+    edge:setDist(edge:getLine():minDist(px*tileW,py*tileH))
+  end
+  table.sort(self.forwardEdges, function(a,b) return a:getDist() < b:getDist() end)
 end
 
 --*****************************************************************************--
@@ -142,8 +146,8 @@ function FOV:project(px, py, tileW, tileH)
     end
   end
   -- Check of intersections
-  for k,p in pairs(self.projections) do
-  end
+  --for k,p in pairs(self.projections) do
+  --end
 end
 
 --*****************************************************************************--

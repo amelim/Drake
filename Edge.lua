@@ -4,7 +4,7 @@
 
 require "Line"
 
-Edge = {line_ = Line:new(), next_ = false, previous_ = false}
+Edge = {line_ = Line:new(), next_ = false, previous_ = false, dist_ = 0}
 
 function Edge:new(o)
   o = o or {}
@@ -21,3 +21,6 @@ function Edge:getNext() return self.next_ end
 
 function Edge:setPrevious(previous) self.previous_ = previous end
 function Edge:getPrevious() return self.previous_ end
+
+function Edge:setDist(dist) self.dist_ = dist end
+function Edge:getDist() return self.dist_ end

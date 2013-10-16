@@ -94,7 +94,7 @@ function love.update(dt)
   tW,tH = dungeon:getFloorSize()
 
   fov:findForwardEdges(x, y, dungeon:getBlocked(), tW, tH, 16, 24)
-  fov:linkEdges()
+  fov:linkEdges(x,y,16,24)
   fov:project(x,y,16,24)
   
 end
@@ -108,13 +108,22 @@ function love.draw()
     forwardEdges = fov:getForwardEdges()
     projections = fov:getProjections()
 
+    local r=255
+    local g=0
+    local b=0
     for k,e in pairs(forwardEdges) do
       v = e:getLine()
       x0,y0 = v:getOrigin()
       x,y = v:getEnd()
+      love.graphics.setColor(r,g,b)
+      if g<255 then
+        g = g+5
+      elseif b < 255 then
+        b = b+1
+      end
       love.graphics.line(x0,y0,x,y)
     end
-
+    love.graphics.setColor(255,255,255,50)
     for k,e in pairs(projections) do
       v = e:getLine()
       x0,y0 = v:getOrigin()
@@ -122,10 +131,11 @@ function love.draw()
       love.graphics.line(x0,y0,x,y)
     end
 
-    love.graphics.print("FPS: "..love.timer.getFPS(), 10, 20)
+    
     love.graphics.print("Dungeon W:"..dungeon.w.."Dungeon H:"..dungeon.h, 10, 40)
     love.graphics.print("Player Pos:"..rogue.x..","..rogue.y,10,60)
   end
+  love.graphics.print("FPS: "..love.timer.getFPS(), 10, 20)
   viewport:render()
   love.event.wait()
   

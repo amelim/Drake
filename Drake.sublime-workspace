@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"pro",
+				"projections"
+			],
+			[
+				"edge",
+				"edge"
+			],
+			[
+				"x",
+				"x"
+			],
+			[
 				"w",
 				"wall"
 			],
@@ -24,37 +36,11 @@
 	"buffers":
 	[
 		{
-			"file": "main.lua",
+			"file": "/C/Users/water_000/Documents/ConditionOne/source/game_setup.xml",
 			"settings":
 			{
-				"buffer_size": 2845,
+				"buffer_size": 243,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Dungeon.lua",
-			"settings":
-			{
-				"buffer_size": 6778,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "FOV.lua",
-			"settings":
-			{
-				"buffer_size": 64,
-				"line_ending": "Windows",
-				"name": "FOV.lua"
-			}
-		},
-		{
-			"file": "Tiles.lua",
-			"settings":
-			{
-				"buffer_size": 1400,
-				"line_ending": "Windows",
-				"name": "--Tiles"
 			}
 		}
 	],
@@ -99,11 +85,16 @@
 	"file_history":
 	[
 		"/C/Users/water_000/Documents/GitHub/Drake/Entity.lua",
-		"/C/Users/water_000/Documents/GitHub/Drake/Color.lua",
-		"/C/Users/water_000/Documents/GitHub/Drake/Viewport.lua",
 		"/C/Users/water_000/Documents/GitHub/Drake/Point2.lua",
-		"/C/Users/water_000/Documents/GitHub/Drake/Room.lua",
+		"/C/Users/water_000/Documents/GitHub/Drake/Viewport.lua",
+		"/C/Users/water_000/Documents/GitHub/Drake/Tiles.lua",
+		"/C/Users/water_000/Documents/GitHub/Drake/Line.lua",
 		"/C/Users/water_000/Documents/GitHub/Drake/Dungeon.lua",
+		"/C/Users/water_000/Documents/GitHub/Drake/Edge.lua",
+		"/C/Users/water_000/Documents/GitHub/Drake/FOV.lua",
+		"/C/Users/water_000/Documents/GitHub/Drake/main.lua",
+		"/C/Users/water_000/Documents/GitHub/Drake/Color.lua",
+		"/C/Users/water_000/Documents/GitHub/Drake/Room.lua",
 		"/C/Users/water_000/Documents/GitHub/Drake/BSP.lua",
 		"/C/Users/water_000/Documents/GitHub/Drake/Tile.lua",
 		"/C/Users/water_000/AppData/Roaming/Sublime Text 2/Packages/User/love-unstable.sublime-build",
@@ -149,6 +140,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"projection",
+			"edge",
+			"getn",
+			"floor",
+			"Point2",
 			"clearL",
 			"BPS",
 			"xsize",
@@ -173,6 +169,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"pline",
+			"line",
+			"blocked",
 			"viewport",
 			"Viewport"
 		],
@@ -190,198 +189,23 @@
 			[
 				{
 					"buffer": 0,
-					"file": "main.lua",
+					"file": "/C/Users/water_000/Documents/ConditionOne/source/game_setup.xml",
 					"settings":
 					{
-						"buffer_size": 2845,
+						"buffer_size": 243,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2001,
-								2001
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"spell_check": false,
-							"sublimelinter": true,
-							"sublimelinter_delay": 2,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 672.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Dungeon.lua",
-					"settings":
-					{
-						"buffer_size": 6778,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5782,
-								5782
-							]
-						],
-						"settings":
-						{
-							"spell_check": false,
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2060.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "FOV.lua",
-					"settings":
-					{
-						"buffer_size": 64,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								64,
-								64
-							]
-						],
-						"settings":
-						{
-							"auto_name": "FOV.lua",
-							"syntax": "Packages/Lua/Lua.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Tiles.lua",
-					"settings":
-					{
-						"buffer_size": 1400,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								65,
-								65
-							]
-						],
-						"settings":
-						{
-							"auto_name": "--Tiles",
-							"syntax": "Packages/Lua/Lua.tmLanguage"
+							"syntax": "Packages/XML/XML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

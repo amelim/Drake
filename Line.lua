@@ -38,10 +38,5 @@ function Line:set(x0,y0,x,y)
   self.y_ = y
 end
 
-function Line:setY(y)
-  self.y_ = y
-end
-
-function Line:setX(x)
-  self.x_ = x
-end
+--function Line:getSlope()
+--  return x0_ - 

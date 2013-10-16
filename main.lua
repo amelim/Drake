@@ -94,6 +94,8 @@ function love.update(dt)
   tW,tH = dungeon:getFloorSize()
 
   fov:findForwardEdges(x, y, dungeon:getBlocked(), tW, tH, 16, 24)
+  fov:linkEdges()
+  fov:project(x,y,16,24)
   
 end
 
@@ -104,11 +106,22 @@ function love.draw()
     love.graphics.setShader()
     viewport:printRooms()
     forwardEdges = fov:getForwardEdges()
-    for k,v in pairs(forwardEdges) do
+    projections = fov:getProjections()
+
+    for k,e in pairs(forwardEdges) do
+      v = e:getLine()
       x0,y0 = v:getOrigin()
       x,y = v:getEnd()
       love.graphics.line(x0,y0,x,y)
     end
+
+    for k,e in pairs(projections) do
+      v = e:getLine()
+      x0,y0 = v:getOrigin()
+      x,y = v:getEnd()
+      love.graphics.line(x0,y0,x,y)
+    end
+
     love.graphics.print("FPS: "..love.timer.getFPS(), 10, 20)
     love.graphics.print("Dungeon W:"..dungeon.w.."Dungeon H:"..dungeon.h, 10, 40)
     love.graphics.print("Player Pos:"..rogue.x..","..rogue.y,10,60)

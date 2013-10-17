@@ -123,13 +123,6 @@ function love.draw()
       end
       love.graphics.line(x0,y0,x,y)
     end
-    love.graphics.setColor(255,255,255,50)
-    for k,e in pairs(projections) do
-      v = e:getLine()
-      x0,y0 = v:getOrigin()
-      x,y = v:getEnd()
-      love.graphics.line(x0,y0,x,y)
-    end
 
     
     love.graphics.print("Dungeon W:"..dungeon.w.."Dungeon H:"..dungeon.h, 10, 40)

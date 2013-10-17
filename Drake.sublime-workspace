@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"y",
+				"y"
+			],
+			[
 				"pro",
 				"projections"
 			],
@@ -36,10 +40,34 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/water_000/Documents/ConditionOne/source/game_setup.xml",
+			"file": "main.lua",
 			"settings":
 			{
-				"buffer_size": 243,
+				"buffer_size": 3655,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Line.lua",
+			"settings":
+			{
+				"buffer_size": 840,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "FOV.lua",
+			"settings":
+			{
+				"buffer_size": 6097,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Edge.lua",
+			"settings":
+			{
+				"buffer_size": 657,
 				"line_ending": "Windows"
 			}
 		}
@@ -84,6 +112,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/water_000/Documents/ConditionOne/source/game_setup.xml",
 		"/C/Users/water_000/Documents/GitHub/Drake/Entity.lua",
 		"/C/Users/water_000/Documents/GitHub/Drake/Point2.lua",
 		"/C/Users/water_000/Documents/GitHub/Drake/Viewport.lua",
@@ -184,28 +213,112 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/water_000/Documents/ConditionOne/source/game_setup.xml",
+					"file": "main.lua",
 					"settings":
 					{
-						"buffer_size": 243,
+						"buffer_size": 3655,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2643,
+								2643
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/XML/XML.tmLanguage"
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 819.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Line.lua",
+					"settings":
+					{
+						"buffer_size": 840,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								758,
+								758
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "FOV.lua",
+					"settings":
+					{
+						"buffer_size": 6097,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2386,
+								2386
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 862.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Edge.lua",
+					"settings":
+					{
+						"buffer_size": 657,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								657,
+								657
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
